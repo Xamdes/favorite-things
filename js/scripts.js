@@ -1,4 +1,5 @@
-var favorites;
+var favoritesOne;
+var favoritesTwo;
 
 $(function(){
 
@@ -8,8 +9,15 @@ $(function(){
     var inputTwo = $("#input-two").val();
     var inputThree = $("#input-three").val();
 
-    favorites = [inputOne,inputTwo,inputThree];
-    $("#return").text(favorites.toString());
+    favoritesOne = [inputOne,inputTwo,inputThree];
+    favoritesTwo = [];
+    $("#return").text(favoritesOne);
+    favoritesTwo.push("<li>"+favoritesOne[1]+"</li>");
+    favoritesTwo.push("<li>"+favoritesOne[0]+"</li>");
+    favoritesTwo.push("<li>"+favoritesOne[2]+"</li>");
+
+    $("#list").append(favoritesTwo);
+
     event.preventDefault();
   });
 
